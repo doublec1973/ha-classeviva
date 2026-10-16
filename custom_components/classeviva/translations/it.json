@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Accedi a ClasseViva",
+        "description": "Usa le credenziali del registro (studente o genitore).",
+        "data": {
+          "username": "Username / Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reinserisci la password",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Credenziali non valide",
+      "cannot_connect": "Impossibile contattare ClasseViva",
+      "blocked": "Accesso bloccato da ClasseViva (403). Non è un problema di password: probabile blocco dell'IP/della rete o chiusura dell'API non ufficiale."
+    },
+    "abort": {
+      "already_configured": "Account già configurato",
+      "reauth_successful": "Riautenticazione completata"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni ClasseViva",
+        "data": {
+          "scan_interval": "Intervallo di aggiornamento (minuti)",
+          "saturday": "Scuola aperta anche il sabato",
+          "keywords": "Parole chiave per riconoscere i compiti nelle annotazioni (separate da virgola; vuoto per disattivare)",
+          "closures": "Giorni di sospensione extra: date o intervalli separati da virgola (es. 2026-12-07, 2026-12-23..2027-01-06)"
+        }
+      }
+    },
+    "error": {
+      "invalid_closures": "Formato non valido: usa AAAA-MM-GG oppure GG/MM/AAAA, intervalli con .."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "average": {
+        "name": "Media generale"
+      },
+      "last_grade": {
+        "name": "Ultimo voto"
+      },
+      "homework": {
+        "name": "Compiti in programma"
+      },
+      "homework_tomorrow": {
+        "name": "Compiti prossimo giorno utile"
+      },
+      "tests": {
+        "name": "Verifiche in programma"
+      },
+      "absences": {
+        "name": "Assenze"
+      },
+      "delays": {
+        "name": "Ritardi"
+      },
+      "exits": {
+        "name": "Uscite anticipate"
+      },
+      "unjustified": {
+        "name": "Da giustificare"
+      },
+      "notices": {
+        "name": "Comunicazioni non lette"
+      },
+      "notes": {
+        "name": "Note disciplinari"
+      },
+      "homework_day_2": {
+        "name": "Compiti 2° giorno utile"
+      },
+      "homework_day_3": {
+        "name": "Compiti 3° giorno utile"
+      },
+      "homework_recent": {
+        "name": "Compiti assegnati di recente"
+      }
+    },
+    "calendar": {
+      "agenda": {
+        "name": "Agenda"
+      }
+    }
+  }
+}

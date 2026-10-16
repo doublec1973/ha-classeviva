@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to ClasseViva",
+        "description": "Use your register credentials (student or parent).",
+        "data": {
+          "username": "Username / Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-enter password",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid credentials",
+      "cannot_connect": "Cannot reach ClasseViva",
+      "blocked": "Access blocked by ClasseViva (403). Not a password issue: likely IP/network block or the unofficial API being closed."
+    },
+    "abort": {
+      "already_configured": "Account already configured",
+      "reauth_successful": "Re-authentication successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ClasseViva options",
+        "data": {
+          "scan_interval": "Update interval (minutes)",
+          "saturday": "School is open on Saturdays",
+          "keywords": "Keywords to detect homework in agenda notes (comma separated; empty to disable)",
+          "closures": "Extra no-school days: dates or ranges, comma separated (e.g. 2026-12-07, 2026-12-23..2027-01-06)"
+        }
+      }
+    },
+    "error": {
+      "invalid_closures": "Invalid format: use YYYY-MM-DD or DD/MM/YYYY, ranges with .."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "average": {
+        "name": "Overall average"
+      },
+      "last_grade": {
+        "name": "Last grade"
+      },
+      "homework": {
+        "name": "Upcoming homework"
+      },
+      "homework_tomorrow": {
+        "name": "Homework next school day"
+      },
+      "tests": {
+        "name": "Upcoming tests"
+      },
+      "absences": {
+        "name": "Absences"
+      },
+      "delays": {
+        "name": "Delays"
+      },
+      "exits": {
+        "name": "Early exits"
+      },
+      "unjustified": {
+        "name": "To justify"
+      },
+      "notices": {
+        "name": "Unread notices"
+      },
+      "notes": {
+        "name": "Disciplinary notes"
+      },
+      "homework_day_2": {
+        "name": "Homework 2nd school day"
+      },
+      "homework_day_3": {
+        "name": "Homework 3rd school day"
+      },
+      "homework_recent": {
+        "name": "Recently assigned homework"
+      }
+    },
+    "calendar": {
+      "agenda": {
+        "name": "Agenda"
+      }
+    }
+  }
+}
