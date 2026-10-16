@@ -1,12 +1,14 @@
 {
   "domain": "classeviva",
   "name": "ClasseViva",
-  "codeowners": ["@doublec1973"],
+  "codeowners": [
+    "@doublec1973"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/doublec1973/ha-classeviva",
-  "issue_tracker": "https://github.com/doublec1973/ha-classeviva/issues",
   "integration_type": "service",
   "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/doublec1973/ha-classeviva/issues",
   "requirements": [
     "holidays"
   ],
