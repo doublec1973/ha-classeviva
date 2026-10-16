@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 3 * * 1"   # ogni lunedì alle 03:00 UTC
+  workflow_dispatch:      # avvio manuale dalla scheda Actions
+
+permissions: {}
+
+jobs:
+  validate-hacs:
+    name: Validazione HACS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hacs/action@main
+        with:
+          category: integration
+          ignore: brands
+
+  validate-hassfest:
+    name: Validazione Home Assistant (hassfest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
+
+  check-syntax:
+    name: Controllo JSON e Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: JSON validi
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          errori = 0
+          for p in pathlib.Path(".").rglob("*.json"):
+              if ".git" in p.parts:
+                  continue
+              try:
+                  json.loads(p.read_text(encoding="utf-8"))
+                  print("OK ", p)
+              except json.JSONDecodeError as e:
+                  print("ERRORE", p, e)
+                  errori += 1
+          sys.exit(1 if errori else 0)
+          PY
+      - name: Python compila
+        run: python -m compileall -q custom_components
